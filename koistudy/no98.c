@@ -12,9 +12,15 @@ int main(void)
 		}
 	}
 	do {
+		//Bait Exists?
 		if(board[ax][ay] == 2) {
 			board[ax][ay] = 9; break;
-		} else { board[ax][ay] = 9;}
+		}
+		else {
+			board[ax][ay] = 9;
+		}
+		
+		//Ant Move
 		if(board[ax+1][ay] == 1 && board[ax][ay+1] == 1)
 			break;
 		else if(board[ax][ay+1] == 1) {
