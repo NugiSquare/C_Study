@@ -21,4 +21,15 @@ int main(void)
 	}
 	printf("%lld", answer);
 	return 0;
+	
+	// another solution
+	// int n, i;
+	// long long an = 0, sum = 0;
+	// scanf("%d", &n);
+	// for(i=1; i<=n; i++) {
+	// 	an = an + i;
+	// 	sum = sum + an;
+	// }
+	// printf("lld", sum);
+	// return 0;
 }
