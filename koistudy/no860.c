@@ -4,35 +4,36 @@
 
 long long prime_number(int k, long long *array)
 {
-	if(array[k] != 0) //다이나믹프로그래밍
+    //다이나믹프로그래밍
+	if(array[k] != 0)
 	{
 		return array[k];
 	}
 	else
 	{
-		int flag = 0;
-		int divide_flag = 0;
+		int divide_flag = 1;
 		int i;
 		if(array[k-1] == 0)
 		{
 			array[k-1] = prime_number(k-1, array);
 		}
 		int ans = array[k-1];
-		while(!flag)
+		while(divide_flag)
 		{
 			ans++; divide_flag = 0;
-            #
-			for(i=1; i<=sqrt((double)k); i++)//에라토스테네스의 체
+
+            //에라토스테네스의 체
+			for(i=1; i<=sqrt((double)k); i++)
 			{
-				if(ans % array[i] == 0)//   소수들 중 하나로만 나누어 떨어진다면
+                //소수들 중 하나로만 나누어 떨어진다면
+				if(ans % array[i] == 0)
 				{
-					divide_flag = 1;//      그 숫자는 소수가 아니다.
+                    //그 숫자는 소수가 아니다.
+					divide_flag = 1;
 				}
 				if(divide_flag)
 					break;
 			}
-			if(!divide_flag)
-				flag = 1;
 		}
 		return ans;
 	}
